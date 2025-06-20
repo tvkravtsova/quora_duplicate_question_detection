@@ -41,7 +41,7 @@ quora_duplicate_question_detection/
 
 ## Data
 
-*   **Source:** [Quora Question Pairs Kaggle Competition](https://www.kaggle.com/c/quora-question-pairs/data)
+*   **Source:** [Quora Question Pairs dataset](https://www.kaggle.com/c/quora-question-pairs/data) from Kaggle
 *   **Content:** Pairs of questions with IDs and a binary label indicating if they are duplicates.
 *   **Columns:**
     - `qid1`, `qid2`: Unique question IDs
