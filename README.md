@@ -29,7 +29,7 @@ quora_duplicate_question_detection/
 │   ├── log_reg.joblib                      # Logistic Regression model
 │   ├── xgb_model.joblib                     # XGBoost model
 │   ├── stacking_clf.joblib                  # Stacked ensemble model
-│   └── bert-duplicate-classifier.zip        # Fine-tuned BERT model
+│   └── bert-duplicate-classifier.zip        # Download separately – fine-tuned BERT model (see README) 
 ├── notebooks/
 │   ├── Quora_question_pairs_EDA.ipynb       # Exploratory Data Analysis
 │   └── Quora_question_pairs_main.ipynb      # Main notebook for preprocessing, modeling, and evaluation
@@ -41,7 +41,7 @@ quora_duplicate_question_detection/
 
 ## Data
 
-*   **Source:** [Quora Question Pairs dataset](https://www.kaggle.com/c/quora-question-pairs/data) from Kaggle
+*   **Source:** [Quora Question Pairs Dataset](https://www.kaggle.com/c/quora-question-pairs/data) from Kaggle.
 *   **Content:** Pairs of questions with IDs and a binary label indicating if they are duplicates.
 *   **Columns:**
     - `qid1`, `qid2`: Unique question IDs
@@ -72,16 +72,14 @@ Below are key Log Loss and ROC AUC scores. For detailed metrics and model compar
 | **Logistic Regression**      | 0.4438         | 0.8612        | Fast, interpretable baseline                |
 | **XGBoost**                  | 0.4680         | 0.8423        | Limited tuning applied                      |
 | **Stacked Ensemble**         | 0.4322         | 0.8692        | Combines LR and XGB                         |
-| **BERT (fine-tuned)**        | **0.3141**     | **0.9332**   | Best performance, captures semantic meaning |
+| **BERT (fine-tuned)**        | **0.3141**     | **0.9332**    | Best performance, captures semantic meaning |
 
 ## How to Use Model
 
-### **BERT (fine-tuned) Model**
-The best performing model is saved in `models/bert-duplicate-classifier.zip`. Before using, unzip the archive:
+### **BERT (fine-tuned) Model Download**
+The best performing model is saved in `models/bert-duplicate-classifier.zip`.  Since the file is too large for GitHub, you can download it from Google Drive: [Click here to download the model](https://drive.google.com/uc?export=download&id=1crHDbGIzca4zfQtcvbOKTwUL2POVevPA)
 
-```bash
-unzip models/bert-duplicate-classifier.zip -d models/bert-duplicate-classifier
-```
+After downloading, simply extract the `.zip` file into the `models/` directory.
 
 Example usage for inference:
 
