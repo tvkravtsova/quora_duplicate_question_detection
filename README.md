@@ -6,11 +6,11 @@ This project addresses the challenge of identifying whether two Quora questions 
 
 We compare both traditional machine learning and state-of-the-art transformer-based NLP approaches to highlight the strengths and trade-offs of each modeling paradigm.
 
-*  **Modeling Approaches:**
-    - *Logistic Regression* using TF-IDF features
-    - *XGBoost* trained on hand-engineered text similarity features
-    - *Stacked Ensemble* combining Logistic Regression and XGBoost
-    - *Fine-tuned BERT* (transformer model) for sequence pair classification
+**Modeling Approaches:**
+- **Logistic Regression** using TF-IDF features
+- **XGBoost** trained on hand-engineered text similarity features
+- **Stacked Ensemble** combining Logistic Regression and XGBoost
+- **BERT** (fine-tuned transformer model) for sequence pair classification
 
 *  **Evaluation Metrics:**
     - **Primary:** Log Loss
@@ -55,28 +55,28 @@ Key steps performed (details in `notebooks/Quora_question_pairs_main.ipynb` and 
 **Text Cleaning:** Applied standard text normalization techniques — lowercasing, punctuation removal, stopword filtering, and lemmatization — to prepare input for TF-IDF vectorization.
 **TF-IDF Vectorization & Cosine Similarity:** Computed TF-IDF vectors for both questions and derived cosine similarity as a numerical feature representing semantic closeness.
 **Scaling:** Applied StandardScaler for numeric features.
-**Final Feature Matrix (Traditional ML):** For classical models (Logistic Regression, XGBoost, Stacked Ensemble), all engineered features—including token-based metrics, TF-IDF vectors, cosine similarity, and scaled numerics—are merged into a single matrix.
-**BERT Input Preparation:** For transformer-based classification, raw question pairs were tokenized using a pre-trained BERT tokenizer. This included automatic truncation, padding, and generation of attention masks and token type IDs, as required for sequence-pair classification tasks.
+**Final Feature Matrix (Traditional ML):** For classical models (**Logistic Regression**, **XGBoost**, **Stacked Ensemble**), all engineered features—including token-based metrics, TF-IDF vectors, cosine similarity, and scaled numerics—are merged into a single matrix.
+**BERT Input Preparation:** For transformer-based classification, raw question pairs were tokenized using a pre-trained **BERT** tokenizer. This included automatic truncation, padding, and generation of attention masks and token type IDs, as required for sequence-pair classification tasks.
 
 ## Modeling & Evaluation
 
-*   **Models Trained:**  Logistic Regression, XGBoost, Stacked Ensemble, and fine-tuned BERT.
+*   **Models Trained:**  **Logistic Regression**, **XGBoost**, **Stacked Ensemble**, and fine-tuned **BERT**.
 *   **Evaluation:** Evaluated using Log Loss (primary), with ROC AUC and F1-score as secondary metrics.
 
 ## Results Summary
 
 Below are key Log Loss and ROC AUC scores. For detailed metrics and model comparisons, see `notebooks/Quora_question_pairs_main.ipynb`.
 
-| Model                        | Test Log Loss | Test AUROC   | Key Notes                                   |
-|:-----------------------------|:--------------|:-------------|:--------------------------------------------|
-| Logistic Regression          | ~0.44         | ~0.86        | Fast, interpretable baseline                |
-| XGBoost                      | ~0.47         | ~0.84        | Limited tuning applied                      |
-| Stacked Ensemble             | ~0.43         | ~0.87        | Combines LR and XGB                         |
-| **BERT (fine-tuned)**        |  **0.31**     |  **0.93**    | Best performance, captures semantic meaning |
+| Model                        | Test Log Loss  | Test AUROC    | Key Notes                                   |
+|:-----------------------------|:---------------|:--------------|:--------------------------------------------|
+| **Logistic Regression**      | 0.4438         | 0.8612        | Fast, interpretable baseline                |
+| **XGBoost**                  | 0.4680         | 0.8423        | Limited tuning applied                      |
+| **Stacked Ensemble**         | 0.4322         | 0.8692        | Combines LR and XGB                         |
+| **BERT (fine-tuned)**        | **0.3141**     | ~**0.9332**   | Best performance, captures semantic meaning |
 
 ## How to Use Model
 
-### BERT (fine-tuned) Model
+### **BERT (fine-tuned) Model**
 The best performing model is saved in `models/bert-duplicate-classifier.zip`. Before using, unzip the archive:
 
 ```bash
@@ -102,7 +102,7 @@ with torch.no_grad():
     print('Duplicate' if pred == 1 else 'Not duplicate')
 ```
 
-### Classical Models (Logistic Regression, XGBoost, Stacked Ensemble)
+### **Classical Models** (**Logistic Regression**, **XGBoost**, **Stacked Ensemble**)
 
 Classical models are saved in the `models/` directory as `.joblib` files. Example usage:
 
