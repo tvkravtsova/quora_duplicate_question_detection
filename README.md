@@ -7,14 +7,14 @@ This project addresses the challenge of identifying whether two Quora questions 
 We compare both traditional machine learning and state-of-the-art transformer-based NLP approaches to highlight the strengths and trade-offs of each modeling paradigm.
 
 *  **Modeling Approaches:**
-  *Logistic Regression* using TF-IDF features
-  *XGBoost* trained on hand-engineered text similarity features
-  *Stacked Ensemble* combining Logistic Regression and XGBoost
-  *Fine-tuned BERT* (transformer model) for sequence pair classification
+    - *Logistic Regression* using TF-IDF features
+    - *XGBoost* trained on hand-engineered text similarity features
+    - *Stacked Ensemble* combining Logistic Regression and XGBoost
+    - *Fine-tuned BERT* (transformer model) for sequence pair classification
 
 *  **Evaluation Metrics:**
-  - **Primary:** Log Loss
-  - **Secondary:** ROC AUC, F1 Score
+    - **Primary:** Log Loss
+    - **Secondary:** ROC AUC, F1 Score
 
 *  **Interpretation Strategy:** The focus of interpretation is comparing model performance to understand the trade-offs between simplicity, interpretability, and predictive power
 
