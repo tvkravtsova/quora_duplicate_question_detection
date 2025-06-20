@@ -7,10 +7,10 @@ This project addresses the challenge of identifying whether two Quora questions 
 We compare both traditional machine learning and state-of-the-art transformer-based NLP approaches to highlight the strengths and trade-offs of each modeling paradigm.
 
 *  **Modeling Approaches:**
-  - *Logistic Regression* using TF-IDF features
-  - *XGBoost* trained on hand-engineered text similarity features
-  - *Stacked Ensemble* combining Logistic Regression and XGBoost
-  - *Fine-tuned BERT* (transformer model) for sequence pair classification
+  *Logistic Regression* using TF-IDF features
+  *XGBoost* trained on hand-engineered text similarity features
+  *Stacked Ensemble* combining Logistic Regression and XGBoost
+  *Fine-tuned BERT* (transformer model) for sequence pair classification
 
 *  **Evaluation Metrics:**
   - **Primary:** Log Loss
@@ -51,12 +51,12 @@ quora_duplicate_question_detection/
 ## Feature Engineering & Preprocessing
 
 Key steps performed (details in `notebooks/Quora_question_pairs_main.ipynb` and `src/quora_questions_preprocessing.py`):
-*   **Token-based Features:** Extracted features such as word counts, unique word counts, number of common words between question pairs, Jaccard similarity, and unique word ratios.
-*   **Text Cleaning:** Applied standard text normalization techniques — lowercasing, punctuation removal, stopword filtering, and lemmatization — to prepare input for TF-IDF vectorization.
-*   **TF-IDF Vectorization & Cosine Similarity:** Computed TF-IDF vectors for both questions and derived cosine similarity as a numerical feature representing semantic closeness.
-*   **Scaling:** Applied StandardScaler for numeric features.
-*   **Final Feature Matrix (Traditional ML):** For classical models (Logistic Regression, XGBoost, Stacked Ensemble), all engineered features—including token-based metrics, TF-IDF vectors, cosine similarity, and scaled numerics—are merged into a single matrix.
-*   **BERT Input Preparation:** For transformer-based classification, raw question pairs were tokenized using a pre-trained BERT tokenizer. This included automatic truncation, padding, and generation of attention masks and token type IDs, as required for sequence-pair classification tasks.
+**Token-based Features:** Extracted features such as word counts, unique word counts, number of common words between question pairs, Jaccard similarity, and unique word ratios.
+**Text Cleaning:** Applied standard text normalization techniques — lowercasing, punctuation removal, stopword filtering, and lemmatization — to prepare input for TF-IDF vectorization.
+**TF-IDF Vectorization & Cosine Similarity:** Computed TF-IDF vectors for both questions and derived cosine similarity as a numerical feature representing semantic closeness.
+**Scaling:** Applied StandardScaler for numeric features.
+**Final Feature Matrix (Traditional ML):** For classical models (Logistic Regression, XGBoost, Stacked Ensemble), all engineered features—including token-based metrics, TF-IDF vectors, cosine similarity, and scaled numerics—are merged into a single matrix.
+**BERT Input Preparation:** For transformer-based classification, raw question pairs were tokenized using a pre-trained BERT tokenizer. This included automatic truncation, padding, and generation of attention masks and token type IDs, as required for sequence-pair classification tasks.
 
 ## Modeling & Evaluation
 
@@ -72,7 +72,7 @@ Below are key Log Loss and ROC AUC scores. For detailed metrics and model compar
 | Logistic Regression          | ~0.44         | ~0.86        | Fast, interpretable baseline                |
 | XGBoost                      | ~0.47         | ~0.84        | Limited tuning applied                      |
 | Stacked Ensemble             | ~0.43         | ~0.87        | Combines LR and XGB                         |
-| **BERT (fine-tuned)**        | **0.31**      | **0.93**     | Best performance, captures semantic meaning |
+| **BERT (fine-tuned)**        |  **0.31**     |  **0.93**    | Best performance, captures semantic meaning |
 
 ## How to Use Model
 
@@ -140,10 +140,4 @@ Refer to the main notebook for full preprocessing and feature engineering steps 
 
 *   Tetiana Kravtsova
 *   LinkedIn: https://www.linkedin.com/in/tetianakravtsova/
-
-## Credits & References
-
-- Dataset: [Quora Question Pairs | Kaggle](https://www.kaggle.com/c/quora-question-pairs/data)
-- Libraries: scikit-learn, XGBoost, NLTK, HuggingFace Transformers, PyTorch, pandas, numpy
-
 ---
