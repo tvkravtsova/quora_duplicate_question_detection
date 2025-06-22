@@ -77,7 +77,7 @@ Below are key Log Loss and ROC AUC scores. For detailed metrics and model compar
 ## How to Use Model
 
 ### **BERT (fine-tuned) Model Download**
-The best performing model is saved in `models/bert-duplicate-classifier.zip`.  Since the file is too large for GitHub, you can download it from Google Drive: [Click here to download the model](https://drive.google.com/uc?export=download&id=1crHDbGIzca4zfQtcvbOKTwUL2POVevPA)
+The best performing model is saved in `models/bert-duplicate-classifier.zip`.  Since the file is too large for GitHub, you can download it from Google Drive: [download the model](https://drive.google.com/uc?export=download&id=1crHDbGIzca4zfQtcvbOKTwUL2POVevPA)
 
 After downloading, simply extract the `.zip` file into the `models/` directory.
 
@@ -130,9 +130,9 @@ Refer to the main notebook for full preprocessing and feature engineering steps 
 
 ## Next steps and potential improvements
 
-*   **Use Captum to visualize which input tokens contribute most to BERT's predictions.**
-*   **Build a web-based demo or API to test question pairs interactively**
-*   **Extend the task to multilingual duplicate detection using models like xlm-roberta**
+*   Use Captum to visualize which input tokens contribute most to BERT's predictions.
+*   Build a web-based demo or API to test question pairs interactively
+*   Extend the task to multilingual duplicate detection using models like xlm-roberta
 
 ## Author
 
